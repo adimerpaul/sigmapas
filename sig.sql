@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-06-2019 a las 03:08:59
+-- Tiempo de generación: 18-06-2019 a las 00:04:12
 -- Versión del servidor: 10.1.40-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -43,8 +43,9 @@ CREATE TABLE `colegio` (
 --
 
 INSERT INTO `colegio` (`idcolegio`, `nombre`, `lat`, `long`, `estado`, `created`, `idusuario`) VALUES
-(1, 'COLEGIO NACINAL BOLVIA', -17.9647, -67.106, 'ACTIVO', '2019-06-12 23:59:08', 1),
-(2, 'ESCUELA CARMELA CERRUTO', -17.96, -67.106, 'ACTIVO', '2019-06-12 23:59:08', 1);
+(5, 'Colegio Nacional Bolivia', -17.9804, -67.1166, 'ACTIVO', '2019-06-17 20:31:29', 1),
+(6, 'Escuela Carlos Beltrán Morales', -17.9864, -67.1257, 'ACTIVO', '2019-06-17 20:38:44', 1),
+(7, 'Colegio Naciones unidas', -17.981, -67.1194, 'ACTIVO', '2019-06-17 21:09:34', 1);
 
 -- --------------------------------------------------------
 
@@ -58,15 +59,18 @@ CREATE TABLE `minibus` (
   `estado` varchar(20) NOT NULL DEFAULT 'ACTIVO',
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `idusuario` int(11) NOT NULL,
-  `color` varchar(50) NOT NULL
+  `color` varchar(50) NOT NULL,
+  `orientacion` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `minibus`
 --
 
-INSERT INTO `minibus` (`idminibus`, `nombre`, `estado`, `created`, `idusuario`, `color`) VALUES
-(1, '101', 'ACTIVO', '2019-06-13 00:30:44', 1, '#ff00ff');
+INSERT INTO `minibus` (`idminibus`, `nombre`, `estado`, `created`, `idusuario`, `color`, `orientacion`) VALUES
+(1, '101', 'ACTIVO', '2019-06-13 00:30:44', 1, '#ff00ff', ''),
+(4, '19', 'ACTIVO', '2019-06-17 21:54:34', 1, '#008040', ''),
+(5, '2', 'ACTIVO', '2019-06-17 21:55:38', 1, '#000000', '');
 
 -- --------------------------------------------------------
 
@@ -87,7 +91,16 @@ CREATE TABLE `puntos` (
 
 INSERT INTO `puntos` (`idpunto`, `lat`, `long`, `idminibus`) VALUES
 (1, -17.9647, -67.106, 1),
-(2, -17.97, -67.106, 1);
+(2, -17.97, -67.106, 1),
+(3, -17.9903, -67.132, 4),
+(4, -17.989, -67.1258, 4),
+(5, -17.9895, -67.1121, 4),
+(6, -17.9862, -67.0963, 4),
+(7, -17.9746, -67.0916, 4),
+(8, -18.0095, -67.1361, 5),
+(9, -18.0057, -67.136, 5),
+(10, -17.9916, -67.1381, 5),
+(11, -17.987, -67.134, 5);
 
 -- --------------------------------------------------------
 
@@ -148,19 +161,19 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `colegio`
 --
 ALTER TABLE `colegio`
-  MODIFY `idcolegio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idcolegio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `minibus`
 --
 ALTER TABLE `minibus`
-  MODIFY `idminibus` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idminibus` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `puntos`
 --
 ALTER TABLE `puntos`
-  MODIFY `idpunto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idpunto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`

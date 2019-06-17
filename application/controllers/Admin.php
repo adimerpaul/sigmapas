@@ -13,6 +13,7 @@ class Admin extends CI_Controller {
 		if($query->num_rows()==1){
 			$row=$query->row();
             $_SESSION['user']=$row->user;
+            $_SESSION['idusuario']=$row->idusuario;
 			header("Location: ".base_url()."Main");
 		}else{
 			header("Location: ".base_url()."Admin");
