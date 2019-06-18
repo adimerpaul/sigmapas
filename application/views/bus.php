@@ -1,34 +1,29 @@
 <h3>Controlar Minibus</h3>
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-success m-2" data-toggle="modal" data-target="#exampleModal">
-    <i class='fa fa-school'></i> Nuevo minibus
+    <i class='fa fa-bus'></i> Nuevo minibus
 </button>
 <table id="example" class="display" style="width:100%">
     <thead>
     <tr>
         <th>id</th>
         <th>Nombre</th>
-        <th>lat y long</th>
+        <th>Color</th>
         <th>Estado</th>
         <th>Opciones</th>
     </tr>
     </thead>
     <tbody>
     <?php
-    $query=$this->db->query("SELECT * FROM colegio");
+        $query=$this->db->query("SELECT * FROM minibus");
     foreach($query->result() as $row){
         echo "<tr>
-                        <td>$row->idcolegio</td>
-                        <td>$row->nombre</td>
-                        <td>$row->lat,$row->long</td>
+                        <td>$row->idminibus</td>
+                        <td>$row->nombre $row->orientacion</td>
+                        <td> <div style='background:$row->color;width: 20px;height: 10px;'> </div> </td>
                         <td>$row->estado</td>
                         <td> 
-                            <a href='".base_url()."Colegios/delete/$row->idcolegio' class='eli btn-sm btn-danger'><i class='fa fa-trash'></i> Eliminar</a>
-                            <form action='".base_url()."Main/index' method='post'>
-                                  <input type='text' hidden name='lat' value='$row->lat'>
-                                  <input type='text' hidden name='long' value='$row->long'>
-                            <button type='submit' class='btn-sm btn-info'><i class='fa fa-eye'></i> Ver</button>
-                            </form>
+                            <a href='".base_url()."Bus/delete/$row->idminibus' class='eli btn-sm btn-danger'><i class='fa fa-trash'></i> Eliminar</a>
                             
                         </td>
                     </tr>";

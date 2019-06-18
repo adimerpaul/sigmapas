@@ -24,6 +24,12 @@ class Bus extends CI_Controller {
                 $this->db->query("INSERT INTO puntos SET idminibus='$idminibus',lat='$lat',`long`='$long'");
             }
         }
+        header("Location: ".base_url()."Bus");
+    }
+    function delete($id){
+        $this->db->query("DELETE FROM minibus WHERE idminibus='$id'");
+
+        header("Location: ".base_url()."Bus");
     }
 
 }

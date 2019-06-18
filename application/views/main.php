@@ -42,13 +42,13 @@
                       strokeWeight: 5,
                       content: '$row->nombre'
                   });
-                    flightPath$c.setMap(map);";
+                    flightPath$c.setMap(map);
+                    flightPath$c.addListener('click', showArrays);";
 
          }
         ?>
 
 
-    flightPath.addListener('click', showArrays);
     infoWindow = new google.maps.InfoWindow;
     function showArrays(event) {
         var vertices = this.getPath();

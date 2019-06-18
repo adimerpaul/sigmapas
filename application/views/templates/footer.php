@@ -54,7 +54,7 @@
 
   <!-- Custom scripts for all pages-->
   <script src="<?=base_url()?>js/sb-admin-2.min.js"></script>
-  <script type="text/javascript" src="js/datatables.min.js"></script>
+  <script type="text/javascript" src="<?=base_url()?>js/datatables.min.js"></script>
 
 </body>
 
